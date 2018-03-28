@@ -90,7 +90,7 @@ fars_summarize_years <- function(years) {
 #' @importFrom dyplr filter
 #' @return Returns a rendered state map based on a selected dataframe with the geographic data point of an accident.
 #' @note This function uses the map and graphics functions.
-#' @examples fars_map_state(13,2014) 
+#' @examples fars_map_state(13,2014)
 #' @details Uses the function make_filename and fars_read.  If no data is available, a message is issued.
 #' @references For a list of state numbers, reference https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/812449
 #' @export
