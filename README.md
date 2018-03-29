@@ -11,7 +11,7 @@ The example used to illustrate development of an R package and uploading to Gith
 ## Create an Example Package in R 
 
 Package: FARS
-GitHub:  https://github.com/cowboy2718/fars_project
+GitHub:  https://github.com/cowboy2718/FARS
 
 ## Data Source
 
