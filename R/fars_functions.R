@@ -13,7 +13,7 @@
 #' @importFrom dyplr tbl_df
 #' @importFrom readr read_csv
 #' @references  National Highway Traffic Safety Administration's Fatality Analysis Reporting System data set. https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars
-#' @export Provides a dataframe for manimpulation
+#' @export 
 fars_read <- function(filename) {
   if(!file.exists(filename))
     stop("file '", filename, "' does not exist")
