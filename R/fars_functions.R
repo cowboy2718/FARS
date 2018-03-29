@@ -32,11 +32,13 @@ fars_read <- function(filename) {
 #' @examples df<-make_filename(2014)
 #' @details The function uses sprintf is a wrapper for the system sprintf C-library function. Attempts are made to check that the mode of the values passed match the format supplied, and R's special values (NA, Inf, -Inf and NaN) are handled correctly.
 #' @export
-make_filename <- function(year) {
+make_filename <- function(year) {                 ## Used this code fragment from ty byers suggestion and code 
   year <- as.integer(year)                        ## Assures the input is an integer value
-  sprintf("accident_%d.csv.bz2", year)            ## Pastes the year input to create a filename to be used for extraction.
-  system.file("extdata", file, package="FARS")
+  filename <- sprintf("accident_%d.csv.bz2", year)
+  full_filename <- system.file('extdata', filename, package = 'FARS')
+  full_filename
 }
+
 
 #' Create new data files from the FARS data
 #'
