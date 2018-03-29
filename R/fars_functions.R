@@ -1,3 +1,7 @@
+# Tony Gojanovic
+# Coursera "Building R Packages"
+# Final project
+# April 2018
 #' Reading a FARS data set
 #'
 #' This function reads in data set from the NHTSA Fatality Analysis Reporting System (FARS).
@@ -9,7 +13,6 @@
 #' @importFrom readr read_csv
 #' @references  National Highway Traffic Safety Administration's Fatality Analysis Reporting System data set. https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars
 #' @export Provides a dataframe for manimpulation
-
 fars_read <- function(filename) {
   if(!file.exists(filename))
     stop("file '", filename, "' does not exist")
@@ -28,7 +31,6 @@ fars_read <- function(filename) {
 #' @examples df<-make_filename(2014)
 #' @details The function uses sprintf is a wrapper for the system sprintf C-library function. Attempts are made to check that the mode of the values passed match the format supplied, and R's special values (NA, Inf, -Inf and NaN) are handled correctly.
 #' @export
-
 make_filename <- function(year) {
   year <- as.integer(year)                        ## Assures the input is an integer value
   sprintf("accident_%d.csv.bz2", year)            ## Pastes the year input to create a filename to be used for extraction.
@@ -39,12 +41,11 @@ make_filename <- function(year) {
 #' Read the desired yearly data file and create a new data set with two variables, month and year.
 #' @param years Desired range of years as numeric values. If a year is incorrect, a message is issued.
 #' @return Returns a filtered list of dataframes with a year and month variable or NULL if it doesn't exist.
-#' @importFrom dyplr mutate select %>%
+#' @importFrom dyplr mutate select magrittr %>%
 #' @examples df<-fars_read_years(2013:2015)
 #' @details Uses the dplyr function to create a new data files with month and year variables.  If the year is not valid, an error essage will be issued.
 #' @details Uses the function make_filename and fars_read
 #' @export
-
 fars_read_years <- function(years) {
   lapply(years, function(year) {                  ## Applies the year range to the function to make new files based on each year.
     file <- make_filename(year)                   ## Creates a new filename with the correct format to be read
@@ -71,7 +72,6 @@ fars_read_years <- function(years) {
 #' @details Uses the dplyr function to create a file of years input then summarized and formatted by year, month and accident count. Tidyr is used to format using spread.
 #' @details Uses the function far_read_years
 #' @export
-
 fars_summarize_years <- function(years) {
   dat_list <- fars_read_years(years)              ## creates a new file based on year range and the function fars_read_years.
   dplyr::bind_rows(dat_list) %>%                  ## Use dplyr to creat a new data file with all the years
@@ -94,7 +94,6 @@ fars_summarize_years <- function(years) {
 #' @details Uses the function make_filename and fars_read.  If no data is available, a message is issued.
 #' @references For a list of state numbers, reference https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/812449
 #' @export
-
 fars_map_state <- function(state.num, year) {
   filename <- make_filename(year)                         ## Creates the filename by year to be accessed.
   data <- fars_read(filename)                             ## Read the correct file
