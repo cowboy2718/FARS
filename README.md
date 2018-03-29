@@ -21,7 +21,9 @@ System](https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-f
 
 ### Travis Badge
 
+The following indicates the status of the most recent build:
 
+[![Build Status](https://travis-ci.org/cowboy2718/FARS.svg?branch=master)](https://travis-ci.org/cowboy2718/FARS)
 
 ## Useful Links in the Development of this Package:
 
