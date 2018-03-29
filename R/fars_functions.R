@@ -2,6 +2,7 @@
 # Coursera "Building R Packages"
 # Final project
 # April 2018
+#
 #' Reading a FARS data set
 #'
 #' This function reads in data set from the NHTSA Fatality Analysis Reporting System (FARS).
@@ -34,6 +35,7 @@ fars_read <- function(filename) {
 make_filename <- function(year) {
   year <- as.integer(year)                        ## Assures the input is an integer value
   sprintf("accident_%d.csv.bz2", year)            ## Pastes the year input to create a filename to be used for extraction.
+  system.file("extdata", file, package="FARS")
 }
 
 #' Create new data files from the FARS data

@@ -15,5 +15,4 @@ Imports:
     maps, 
     magrittr,
     readr, 
-    tidyr,
-    tibble
+    tidyr
