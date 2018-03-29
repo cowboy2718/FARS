@@ -2,17 +2,21 @@ Package: FARS
 Type: Package
 Title: NHTS Fatality Analysis Reporting System Extraction
 Version: 0.1.0
-Author: Unknown Author <unknown@somewhere.net>
+Authors@R: person("Tony", "Gojanovic", email = "tonygojanovic@gmail.com",
+                  role = c("aut", "cre"))
+Author: Tony Gojanovic <unknown@somewhere.net>
 Maintainer: Tony Gojanovic <tony.gojanovic@somewhere.net>
 Description: Data Extraction and Summary of National Highway Traffic Safety Administration's Fatality Analysis Reporting System
-License: none
+License: GPL-3
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
-Imports:
-    dplyr,
+Imports: dplyr,
+    tidyr,
+    maps,
     mapdata,
-    maps, 
     magrittr,
-    readr, 
-    tidyr
+    readr
+Suggests: knitr,
+    rmarkdown,
+    testthat
