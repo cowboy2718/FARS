@@ -77,11 +77,11 @@ fars_read_years <- function(years) {
 #' @details Uses the function far_read_years
 #' @export
 fars_summarize_years <- function(years) {
-  dat_list <- fars_read_years(years)              ## creates a new file based on year range and the function fars_read_years.
-  dplyr::bind_rows(dat_list) %>%                  ## Use dplyr to creat a new data file with all the years
-    dplyr::group_by(YEAR, MONTH) %>%              ## Use the grouping variable to provide the summary by year and month
-    dplyr::summarize(n = n()) %>%                 ## Summarize counts by year and month
-    tidyr::spread(YEAR, n)                        ## Create a table with years as columns, rows as months and summary of accidents.
+    dat_list <- fars_read_years(years)            ## creates a new file based on year range and the function fars_read_years.
+    dplyr::bind_rows(dat_list) %>%                ## Use dplyr to creat a new data file with all the years
+      dplyr::group_by_(~ YEAR, ~ MONTH) %>%       ## Use the grouping variable to provide the summary by year and month
+      dplyr::summarize_(n = ~ n()) %>%            ## Summarize counts by year and month
+      tidyr::spread_('YEAR', 'n')                 ## Create a table with years as columns, rows as months and summary of accidents.
 }
 
 #' Plot of accidents by geographic location
@@ -105,7 +105,7 @@ fars_map_state <- function(state.num, year) {
 
   if(!(state.num %in% unique(data$STATE)))                ## Error reporting if state number is not in the database
     stop("invalid STATE number: ", state.num)
-  data.sub <- dplyr::filter(data, STATE == state.num)     ## If state number is located, filter on the state number
+  data.sub <- dplyr::filter_(data, ~ STATE == state.num)  ## If state number is located, filter on the state number
   if(nrow(data.sub) == 0L) {                              ## Reporting of no data found
     message("no accidents to plot")
     return(invisible(NULL))
