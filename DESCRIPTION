@@ -15,7 +15,4 @@ Imports:
    readr,
    tidyr,
    magrittr
-Suggests: knitr,
-    rmarkdown,
-    testthat
-VignetteBuilder: knitr
+
