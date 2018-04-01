@@ -4,7 +4,6 @@ library(dplyr)
 library(maps)
 library(FARS)
 
-setwd(system.file("extdata", package = "FARS"))
 
 test_that("fars_map_state() works correctly", {
      expect_silent(fars_map_state(13, 2014))           
