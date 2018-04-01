@@ -16,7 +16,7 @@ Returns a data frame from a csv file in tabular format.
 This function reads in data set from the NHTSA Fatality Analysis Reporting System (FARS).
 }
 \note{
-dyplr and tbl_df is used to format the returned data frame
+dplyr and tbl_df is used to format the returned data frame
 }
 \examples{
 df<-fars_read("accident_2014.csv.bz2")

@@ -8,9 +8,9 @@
 #' This function reads in data set from the NHTSA Fatality Analysis Reporting System (FARS).
 #' @param filename FARS character filename in csv format to be read. If the filename is incorrect or not located, a message is issued.
 #' @return Returns a data frame from a csv file in tabular format.
-#' @note dyplr and tbl_df is used to format the returned data frame
+#' @note dplyr and tbl_df is used to format the returned data frame
 #' @examples df<-fars_read("accident_2014.csv.bz2")
-#' @importFrom dyplr tbl_df
+#' @importFrom dplyr tbl_df
 #' @importFrom readr read_csv
 #' @references  National Highway Traffic Safety Administration's Fatality Analysis Reporting System data set. https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars
 #' @export 
@@ -45,7 +45,7 @@ make_filename <- function(year) {                 ## Used this code fragment fro
 #' Read the desired yearly data file and create a new data set with two variables, month and year.
 #' @param years Desired range of years as numeric values. If a year is incorrect, a message is issued.
 #' @return Returns a filtered list of dataframes with a year and month variable or NULL if it doesn't exist.
-#' @importFrom dyplr mutate select magrittr %>%
+#' @importFrom dplyr mutate select magrittr %>%
 #' @examples df<-fars_read_years(2013:2015)
 #' @details Uses the dplyr function to create a new data files with month and year variables.  If the year is not valid, an error essage will be issued.
 #' @details Uses the function make_filename and fars_read
@@ -91,7 +91,7 @@ fars_summarize_years <- function(years) {
 #' @param year  The desired year field which becomes an integer input.
 #' @importFrom maps map
 #' @importFrom graphics points
-#' @importFrom dyplr filter
+#' @importFrom dplyr filter
 #' @return Returns a rendered state map based on a selected dataframe with the geographic data point of an accident.
 #' @note This function uses the map and graphics functions.
 #' @examples fars_map_state(13,2014)
