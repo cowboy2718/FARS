@@ -1,4 +1,4 @@
-## ---- echo = FALSE, include = FALSE--------------------------------------
+## ---- echo=FALSE, message=FALSE------------------------------------------
 library(FARS)
 library(dplyr)
 library(maps)
@@ -7,8 +7,8 @@ library(maps)
 library(FARS)
 library(maps)
 
-## ----eval=FALSE----------------------------------------------------------
-#  list.files(system.file("extdata", package = "FARS"))
+## ------------------------------------------------------------------------
+list.files(system.file("extdata", package = "FARS"))
 
 ## ----fars_read function, eval=FALSE--------------------------------------
 #  df<-fars_read("accident_2014.csv.bz2")
