@@ -50,7 +50,7 @@ list.files(system.file("extdata", package = "FARS"))
 
 This function reads in data set from the NHTSA Fatality Analysis Reporting System (FARS).
 
-```{r fars_read function}
+```{r fars_read function, eval=FALSE}
 df<-fars_read("accident_2014.csv.bz2")
 ```
 
@@ -58,7 +58,7 @@ df<-fars_read("accident_2014.csv.bz2")
 
 This function creates a data file name based on the selected year.
 
-```{r make_filename function}
+```{r make_filename function, eval=FALSE}
 df<-make_filename(2014)
 ```
 
@@ -66,7 +66,7 @@ df<-make_filename(2014)
 
 Read the desired yearly data file and create a new data set with two variables, month and year.
 
-```{r far_read_years function}
+```{r far_read_years function, eval=FALSE}
 df<-fars_read_years(2013:2015)
 ```
 
@@ -74,7 +74,7 @@ df<-fars_read_years(2013:2015)
 
 This function creates a simple tabular summary of accident counts by year and month.
 
-```{r fars_summarize_years function}
+```{r fars_summarize_years function, eval=FALSE}
 fars_summarize_years(2013:2015)
 ```
 
@@ -82,7 +82,7 @@ fars_summarize_years(2013:2015)
 
 This function provides a geographic summary of accident locations with a simple state map.
 
-```{r fars_map_state function}
+```{r fars_map_state function, eval=FALSE}
 fars_map_state(13,2014)
 ```
 

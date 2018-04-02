@@ -12,7 +12,6 @@
 
 <meta name="author" content="Tony Gojanovic (Coursera course Building R Packages, March 2018)" />
 
-<meta name="date" content="2018-03-28" />
 
 <title>Development of the FARS (Fatality Analysis Reporting System) Package</title>
 
@@ -70,12 +69,13 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Development of the FARS (Fatality Analysis Reporting System) Package</h1>
 <h4 class="author"><em>Tony Gojanovic (Coursera course Building R Packages, March 2018)</em></h4>
-<h4 class="date"><em>March 28, 2018</em></h4>
+<h4 class="date"><em>April 2, 2018</em></h4>
 
 
 
 <p>This overivew provides a description of an R package called FARS which represents routines for extraction and basic summarization of National Highway Traffic Safety (NHTS) Administration’s Fatality Analysis Reporting System data set (which can be found at <a href="https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars" class="uri">https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars</a>).</p>
 <p>This project was done in partial fullfillment of the Coursera Course “Building R Packages” as developed by John Hopkins University. The author took this course in March of 2018.</p>
+<pre><code>## Warning: package 'dplyr' was built under R version 3.4.3</code></pre>
 <div id="fars-package-content" class="section level2">
 <h2>FARS Package Content</h2>
 <p>The FARS package is composed of the following elements or data handling routines:</p>
@@ -97,6 +97,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2>Data Files</h2>
 <p>Data files can be found at</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">list.files</span>(<span class="kw">system.file</span>(<span class="st">&quot;extdata&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;FARS&quot;</span>))</code></pre></div>
+<pre><code>## [1] &quot;accident_2013.csv.bz2&quot; &quot;accident_2014.csv.bz2&quot; &quot;accident_2015.csv.bz2&quot;</code></pre>
 </div>
 <div id="fars_read" class="section level2">
 <h2>fars_read</h2>
