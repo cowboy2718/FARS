@@ -102,7 +102,7 @@ fars_map_state <- function(state.num, year) {
 
   if(!(state.num %in% unique(data$STATE)))                ## Error reporting if state number is not in the database
     stop("invalid STATE number: ", state.num)
-  data.sub <- dplyr::filter_(data, ~ STATE == state.num)  ## If state number is located, filter on the state number
+  data.sub <- dplyr::filter(data, STATE == state.num)  ## If state number is located, filter on the state number
   if(nrow(data.sub) == 0L) {                              ## Reporting of no data found
     message("no accidents to plot")
     return(invisible(NULL))
