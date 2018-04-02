@@ -1,0 +1,98 @@
+---
+title: "Development of the FARS (Fatality Analysis Reporting System) Package"
+author: "Tony Gojanovic (Coursera course Building R Packages, March 2018)"
+date: "April 2, 2018"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Overview of the FARS package}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+This overivew provides a description of an R package called FARS which represents routines for extraction and basic summarization of National Highway Traffic Safety (NHTS) Administration's Fatality Analysis Reporting System data set (which can be found at https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars).
+
+This project was done in partial fullfillment of the Coursera Course "Building R Packages" as developed by John Hopkins University.  The author took this course in March of 2018.
+
+```{r, echo=FALSE, message=FALSE}
+library(FARS)
+library(dplyr)
+library(maps)
+```
+
+## FARS Package Content
+
+The FARS package is composed of the following elements or data handling routines:
+
+1. fars_read..............Reading in a data set
+2. make _file_name........Creating a filename based on a year input.
+3. fars_read_years........Reading in a range of years and creating an aggregate data frame.
+4. fars_summarize_years...Simple summary function of accidents by year and month.
+5. fars_map_state.........Mapping function of accidents by geographic (state) region.
+
+## Required Packages
+
+The following packages are loaded and required by the package.
+
+```{r Package Loading}
+library(FARS)
+library(maps)
+```
+
+## Data Files
+
+Data files can be found at 
+
+```{r}
+list.files(system.file("extdata", package = "FARS"))
+```
+
+## fars_read
+
+This function reads in data set from the NHTSA Fatality Analysis Reporting System (FARS).
+
+```{r fars_read function}
+df<-fars_read("accident_2014.csv.bz2")
+```
+
+## make_file_name
+
+This function creates a data file name based on the selected year.
+
+```{r make_filename function}
+df<-make_filename(2014)
+```
+
+## far_read_years
+
+Read the desired yearly data file and create a new data set with two variables, month and year.
+
+```{r far_read_years function}
+df<-fars_read_years(2013:2015)
+```
+
+## fars_summarize_years
+
+This function creates a simple tabular summary of accident counts by year and month.
+
+```{r fars_summarize_years function}
+fars_summarize_years(2013:2015)
+```
+
+## fars_map_state
+
+This function provides a geographic summary of accident locations with a simple state map.
+
+```{r fars_map_state function}
+fars_map_state(13,2014)
+```
+
+Note: For a listing of state numbers, refer to https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/812449
+
+## Limitations
+
+The current package FARS is based on extraction of data elements covering the years 2013-205 e.g. those files that are found within the working directory.  The package could be applied to additional data sets as long as they are of a similar format and can be found in the working directory.
+
+## References
+
+National Highway Traffic Safety Administration's Fatality Analysis Reporting System data set. https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars
+
