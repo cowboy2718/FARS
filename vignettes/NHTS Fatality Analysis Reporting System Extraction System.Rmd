@@ -1,7 +1,7 @@
 ---
 title: "Development of the FARS (Fatality Analysis Reporting System) Package"
 author: "Tony Gojanovic (Coursera course Building R Packages, March 2018)"
-date: "March 28, 2018"
+date: "April 2, 2018"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Overview of the FARS package}

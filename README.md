@@ -1,4 +1,4 @@
-# Building R Packages (Coursera online course) March/April 2018
+# Building R Packages (Coursera online course) April 2,  2018
 Peer-graded Assignment   
 Tony Gojanovic
 
