@@ -34,8 +34,6 @@ fars_read <- function(filename) {
 make_filename <- function(year) {                 ## Used this code fragment from ty byers suggestion and code 
   year <- as.integer(year)                        ## Assures the input is an integer value
   filename <- sprintf("accident_%d.csv.bz2", year)
-  full_filename <- system.file('extdata', filename, package = 'FARS')
-  full_filename
 }
 
 
