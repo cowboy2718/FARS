@@ -21,6 +21,3 @@ The function uses sprintf is a wrapper for the system sprintf C-library function
 \note{
 The year will be formatted as an integer.
 }
-\examples{
-df<-make_filename(2014)
-}

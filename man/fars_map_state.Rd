@@ -23,9 +23,6 @@ Uses the function make_filename and fars_read.  If no data is available, a messa
 \note{
 This function uses the map and graphics functions.
 }
-\examples{
-fars_map_state(13,2014)
-}
 \references{
 For a list of state numbers, reference https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/812449
 }

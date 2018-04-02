@@ -20,6 +20,3 @@ Uses the dplyr function to create a new data files with month and year variables
 
 Uses the function make_filename and fars_read
 }
-\examples{
-df<-fars_read_years(2013:2015)
-}

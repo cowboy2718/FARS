@@ -18,9 +18,6 @@ This function reads in data set from the NHTSA Fatality Analysis Reporting Syste
 \note{
 dplyr and tbl_df is used to format the returned data frame
 }
-\examples{
-df<-fars_read("accident_2014.csv.bz2")
-}
 \references{
 National Highway Traffic Safety Administration's Fatality Analysis Reporting System data set. https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars
 }

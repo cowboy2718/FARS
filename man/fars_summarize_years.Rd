@@ -20,6 +20,3 @@ Uses the dplyr function to create a file of years input then summarized and form
 
 Uses the function far_read_years
 }
-\examples{
-fars_summarize_years(2013:2015)
-}

@@ -9,7 +9,6 @@
 #' @param filename FARS character filename in csv format to be read. If the filename is incorrect or not located, a message is issued.
 #' @return Returns a data frame from a csv file in tabular format.
 #' @note dplyr and tbl_df is used to format the returned data frame
-#' @examples df<-fars_read("accident_2014.csv.bz2")
 #' @importFrom dplyr tbl_df
 #' @importFrom readr read_csv
 #' @references  National Highway Traffic Safety Administration's Fatality Analysis Reporting System data set. https://www.nhtsa.gov/research-data/fatality-analysis-reporting-system-fars
@@ -29,7 +28,6 @@ fars_read <- function(filename) {
 #' @param year Year of interest which is numeric value.
 #' @return Returns a character vector file name based on the selected year and a bz2 extendsion.
 #' @note The year will be formatted as an integer.
-#' @examples df<-make_filename(2014)
 #' @details The function uses sprintf is a wrapper for the system sprintf C-library function. Attempts are made to check that the mode of the values passed match the format supplied, and R's special values (NA, Inf, -Inf and NaN) are handled correctly.
 #' @export
 
@@ -47,7 +45,6 @@ make_filename <- function(year) {                 ## Used this code fragment fro
 #' @param years Desired range of years as numeric values. If a year is incorrect, a message is issued.
 #' @return Returns a filtered list of dataframes with a year and month variable or NULL if it doesn't exist.
 #' @importFrom dplyr mutate select %>%
-#' @examples df<-fars_read_years(2013:2015)
 #' @details Uses the dplyr function to create a new data files with month and year variables.  If the year is not valid, an error essage will be issued.
 #' @details Uses the function make_filename and fars_read
 #' @export
@@ -74,7 +71,6 @@ fars_read_years <- function(years) {
 #' @return Returns a summary dataframe by year (column) and month (row) with a summary numeric count of accidents.
 #' @importFrom dplyr bind_rows group_by summarize %>%
 #' @importFrom tidyr spread
-#' @examples fars_summarize_years(2013:2015)
 #' @details Uses the dplyr function to create a file of years input then summarized and formatted by year, month and accident count. Tidyr is used to format using spread.
 #' @details Uses the function far_read_years
 #' @export
@@ -97,7 +93,6 @@ fars_summarize_years <- function(years) {
 #' @importFrom dplyr filter
 #' @return Returns a rendered state map based on a selected dataframe with the geographic data point of an accident.
 #' @note This function uses the map and graphics functions.
-#' @examples fars_map_state(13,2014)
 #' @details Uses the function make_filename and fars_read.  If no data is available, a message is issued.
 #' @references For a list of state numbers, reference https://crashstats.nhtsa.dot.gov/Api/Public/ViewPublication/812449
 #' @export
