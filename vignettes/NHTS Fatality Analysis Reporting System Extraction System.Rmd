@@ -13,7 +13,7 @@ This overivew provides a description of an R package called FARS which represent
 
 This project was done in partial fullfillment of the Coursera Course "Building R Packages" as developed by John Hopkins University.  The author took this course in March of 2018.
 
-```{r, echo = FALSE, include = FALSE}
+```{r, echo=FALSE, message=FALSE}
 library(FARS)
 library(dplyr)
 library(maps)
@@ -42,16 +42,15 @@ library(maps)
 
 Data files can be found at 
 
-```{r eval=FALSE}
+```{r}
 list.files(system.file("extdata", package = "FARS"))
 ```
-
 
 ## fars_read
 
 This function reads in data set from the NHTSA Fatality Analysis Reporting System (FARS).
 
-```{r fars_read function, eval=FALSE}
+```{r fars_read function}
 df<-fars_read("accident_2014.csv.bz2")
 ```
 
@@ -59,7 +58,7 @@ df<-fars_read("accident_2014.csv.bz2")
 
 This function creates a data file name based on the selected year.
 
-```{r make_filename function, eval=FALSE}
+```{r make_filename function}
 df<-make_filename(2014)
 ```
 
@@ -67,7 +66,7 @@ df<-make_filename(2014)
 
 Read the desired yearly data file and create a new data set with two variables, month and year.
 
-```{r far_read_years function, eval=FALSE}
+```{r far_read_years function}
 df<-fars_read_years(2013:2015)
 ```
 
@@ -75,7 +74,7 @@ df<-fars_read_years(2013:2015)
 
 This function creates a simple tabular summary of accident counts by year and month.
 
-```{r fars_summarize_years function, eval=FALSE}
+```{r fars_summarize_years function}
 fars_summarize_years(2013:2015)
 ```
 
@@ -83,7 +82,7 @@ fars_summarize_years(2013:2015)
 
 This function provides a geographic summary of accident locations with a simple state map.
 
-```{r fars_map_state function, eval=FALSE}
+```{r fars_map_state function}
 fars_map_state(13,2014)
 ```
 
