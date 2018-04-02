@@ -78,9 +78,9 @@ fars_read_years <- function(years) {
 fars_summarize_years <- function(years) {
     dat_list <- fars_read_years(years)            ## creates a new file based on year range and the function fars_read_years.
     dplyr::bind_rows(dat_list) %>%                ## Use dplyr to creat a new data file with all the years
-      dplyr::group_by_(~ YEAR, ~ MONTH) %>%       ## Use the grouping variable to provide the summary by year and month
-      dplyr::summarize_(n = ~ n()) %>%            ## Summarize counts by year and month
-      tidyr::spread_('YEAR', 'n')                 ## Create a table with years as columns, rows as months and summary of accidents.
+     dplyr::group_by(YEAR, MONTH) %>%       ## Use the grouping variable to provide the summary by year and month
+     dplyr::summarize(n = n()) %>%            ## Summarize counts by year and month
+     tidyr::spread('YEAR', 'n')                 ## Create a table with years as columns, rows as months and summary of accidents.
 }
 
 #' Plot of accidents by geographic location
